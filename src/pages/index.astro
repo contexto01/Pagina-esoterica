@@ -1,23 +1,23 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import WaFloat from '../components/WaFloat.astro';
-import Hero from '../components/Hero.astro';
-import TrustBar from '../components/TrustBar.astro';
-import Maestro from '../components/Maestro.astro';
-import Casos from '../components/Casos.astro';
-import Servicios from '../components/Servicios.astro';
-import ComoFunciona from '../components/ComoFunciona.astro';
-import TestimoniosFAQ from '../components/TestimoniosFAQ.astro';
-import CtaFooter from '../components/CtaFooter.astro';
+import Layout from '../layouts/Layout.astro'
+import WaFloat from '../components/WaFloat.astro'
+import Hero from '../components/Hero.astro'
+import TrustBar from '../components/TrustBar.astro'
+import Maestro from '../components/Maestro.astro'
+import Casos from '../components/Casos.astro'
+import Servicios from '../components/Servicios.astro'
+import ComoFunciona from '../components/ComoFunciona.astro'
+import TestimoniosFAQ from '../components/TestimoniosFAQ.astro'
+import CtaFooter from '../components/CtaFooter.astro'
 
-const WA_NUMBER = "TUNUMERO";
-const WA_MSG    = encodeURIComponent("Hola Isaías, quiero recibir orientación espiritual.");
-const WA_LINK   = `https://wa.me/${WA_NUMBER}?text=${WA_MSG}`;
+const WA_NUMBER = '+526676903380'
+const WA_MSG = encodeURIComponent('Hola Benjamin, quiero recibir orientación espiritual.')
+const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${WA_MSG}`
 ---
 
 <Layout
-  title="Isaías Camacho | Maestro Espiritual · Amarres de Amor y Rituales"
-  description="Isaías Camacho, maestro espiritual con más de 35 años de experiencia. Experto en amarres de amor, retorno de pareja, limpiezas espirituales y rituales energéticos. Contáctanos por WhatsApp."
+  title="Benjamin Santos | Maestro Espiritual · Amarres de Amor y Rituales"
+  description="Benjamin Santos, maestro espiritual con más de 35 años de experiencia. Experto en amarres de amor, retorno de pareja, limpiezas espirituales y rituales energéticos. Contáctanos por WhatsApp."
 >
   <WaFloat link={WA_LINK} />
   <Hero link={WA_LINK} />
