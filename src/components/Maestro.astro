@@ -1,28 +1,35 @@
 ---
-import WaIcon from './WaIcon.astro';
-const { link } = Astro.props;
+import WaIcon from './WaIcon.astro'
+const { link } = Astro.props
 
 const features = [
-  { icon: "🌙", bold: "Atención personalizada", text: "para cada caso y situación." },
-  { icon: "🔒", bold: "Total confidencialidad", text: "Tu historia es solo tuya." },
-  { icon: "📿", bold: "Trabajos serios y con fe", text: "Cada caso se estudia antes de actuar." },
-  { icon: "📩", bold: "Consulta directa", text: "Sin intermediarios, contigo en todo momento." },
-];
+  { icon: '🌙', bold: 'Atención personalizada', text: 'para cada caso y situación.' },
+  { icon: '🔒', bold: 'Total confidencialidad', text: 'Tu historia es solo tuya.' },
+  {
+    icon: '📿',
+    bold: 'Trabajos serios y con fe',
+    text: 'Cada caso se estudia antes de actuar.'
+  },
+  {
+    icon: '📩',
+    bold: 'Consulta directa',
+    text: 'Sin intermediarios, contigo en todo momento.'
+  }
+]
 
 const serviciosList = [
-  "Amarres, endulzamientos y dominios de amor",
-  "Regresiones de pareja",
-  "Limpiezas espirituales y despojos",
-  "Abre caminos en trabajo, dinero y negocios",
-  "Protección contra envidias y malas energías",
-  "Retornos de pareja",
-  "Lecturas espirituales y orientación",
-];
+  'Amarres, endulzamientos y dominios de amor',
+  'Regresiones de pareja',
+  'Limpiezas espirituales y despojos',
+  'Abre caminos en trabajo, dinero y negocios',
+  'Protección contra envidias y malas energías',
+  'Retornos de pareja',
+  'Lecturas espirituales y orientación'
+]
 ---
 
 <section class="maestro-sec" id="maestro">
   <div class="maestro-inner">
-
     <!-- Lado izquierdo: tarjeta ornamental en lugar de foto -->
     <div class="maestro-emblem reveal">
       <div class="emblem-outer">
@@ -48,7 +55,7 @@ const serviciosList = [
       <div class="servicios-lista">
         <h4>Servicios</h4>
         <ul>
-          {serviciosList.map(s => <li>{s}</li>)}
+          {serviciosList.map((s) => <li>{s}</li>)}
         </ul>
       </div>
     </div>
@@ -58,141 +65,321 @@ const serviciosList = [
       <div class="rune-line" style="justify-content:flex-start;margin-bottom:20px">
         <span>⸻</span><span class="rune">☽ ✦ ☾</span><span>⸻</span>
       </div>
-      <h2>¿Por qué confiar en Isaías Camacho?</h2>
+      <h2>¿Por qué confiar en Benjamin santos?</h2>
 
       <p class="intro-p">
-        Soy <strong>Isaías Camacho</strong>, maestro espiritual con más de <strong>35 años de experiencia</strong>
+        Soy <strong>Benjamin santos</strong>, maestro espiritual con más de <strong
+          >35 años de experiencia</strong
+        >
         ayudando a las personas a encontrar su energía vital y reconectar con sus seres amados.
       </p>
 
       <p class="intro-p">
-        Trabajo con la <strong>palabra, la energía y la tradición ancestral</strong>.
-        Muchas personas llegan con dolor, frialdad, distancia, enredos o situaciones
-        que no logran resolver por otros medios. Aquí se habla claro: escucho tu historia,
-        evalúo tu caso y te oriento con <strong>seriedad</strong>. Sin cuentos, sin presión,
-        con respeto por tu proceso.
+        Trabajo con la <strong>palabra, la energía y la tradición ancestral</strong>. Muchas
+        personas llegan con dolor, frialdad, distancia, enredos o situaciones que no logran
+        resolver por otros medios. Aquí se habla claro: escucho tu historia, evalúo tu caso y
+        te oriento con <strong>seriedad</strong>. Sin cuentos, sin presión, con respeto por tu
+        proceso.
       </p>
 
       <p class="intro-p emphasis">
-        Trabajo con responsabilidad, respeto y total discreción.
-        Cada caso es único y se estudia espiritualmente antes de realizar cualquier trabajo.
+        Trabajo con responsabilidad, respeto y total discreción. Cada caso es único y se
+        estudia espiritualmente antes de realizar cualquier trabajo.
       </p>
 
       <div class="features-grid">
-        {features.map(f => (
-          <div class="feat-item">
-            <span class="feat-icon">{f.icon}</span>
-            <p><strong>{f.bold}</strong> {f.text}</p>
-          </div>
-        ))}
+        {
+          features.map((f) => (
+            <div class="feat-item">
+              <span class="feat-icon">{f.icon}</span>
+              <p>
+                <strong>{f.bold}</strong> {f.text}
+              </p>
+            </div>
+          ))
+        }
       </div>
 
-      <a href={link} target="_blank" rel="noopener noreferrer" class="btn-wa" style="margin-top:36px">
-        <WaIcon/>
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-wa"
+        style="margin-top:36px"
+      >
+        <WaIcon />
         Solicita tu consulta ahora
       </a>
     </div>
-
   </div>
 </section>
 
 <style>
-.maestro-sec {
-  position: relative; z-index: 1;
-  background: linear-gradient(135deg, rgba(8,5,28,.95) 0%, rgba(45,27,105,.15) 50%, rgba(8,5,28,.95) 100%);
-  border-top: 1px solid rgba(201,168,76,.18);
-  border-bottom: 1px solid rgba(201,168,76,.18);
-  padding: 100px 24px;
-}
-.maestro-inner {
-  max-width: 1200px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr 1.4fr;
-  gap: 80px; align-items: start;
-}
-@media(max-width:900px){ .maestro-inner{grid-template-columns:1fr; gap:56px;} }
+  .maestro-sec {
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(
+      135deg,
+      rgba(8, 5, 28, 0.95) 0%,
+      rgba(45, 27, 105, 0.15) 50%,
+      rgba(8, 5, 28, 0.95) 100%
+    );
+    border-top: 1px solid rgba(201, 168, 76, 0.18);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.18);
+    padding: 100px 24px;
+  }
+  .maestro-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+    align-items: start;
+  }
+  @media (max-width: 900px) {
+    .maestro-inner {
+      grid-template-columns: 1fr;
+      gap: 56px;
+    }
+  }
 
-/* ─── EMBLEMA ─── */
-.maestro-emblem { display: flex; flex-direction: column; gap: 32px; align-items: center; }
-.emblem-outer {
-  position: relative; width: 320px; height: 320px;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-}
-.emblem-rings { position: absolute; inset: 0; }
-.ring {
-  position: absolute; border-radius: 50%; border: 1px solid rgba(201,168,76,.3);
-  top: 50%; left: 50%; transform: translate(-50%,-50%);
-}
-.r1 { width: 100%; height: 100%; border-color: rgba(201,168,76,.35); animation: ring-rot 20s linear infinite; }
-.r2 { width: 80%;  height: 80%;  border-color: rgba(201,168,76,.25); animation: ring-rot 15s linear infinite reverse; }
-.r3 { width: 60%;  height: 60%;  border-color: rgba(201,168,76,.4);  animation: ring-rot 10s linear infinite; }
-@keyframes ring-rot { from{transform:translate(-50%,-50%) rotate(0deg)} to{transform:translate(-50%,-50%) rotate(360deg)} }
+  /* ─── EMBLEMA ─── */
+  .maestro-emblem {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+  }
+  .emblem-outer {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .emblem-rings {
+    position: absolute;
+    inset: 0;
+  }
+  .ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .r1 {
+    width: 100%;
+    height: 100%;
+    border-color: rgba(201, 168, 76, 0.35);
+    animation: ring-rot 20s linear infinite;
+  }
+  .r2 {
+    width: 80%;
+    height: 80%;
+    border-color: rgba(201, 168, 76, 0.25);
+    animation: ring-rot 15s linear infinite reverse;
+  }
+  .r3 {
+    width: 60%;
+    height: 60%;
+    border-color: rgba(201, 168, 76, 0.4);
+    animation: ring-rot 10s linear infinite;
+  }
+  @keyframes ring-rot {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
 
-.emblem-core {
-  position: relative; z-index: 2;
-  width: 200px; height: 200px; border-radius: 50%;
-  background: radial-gradient(ellipse at center, rgba(74,47,160,.4) 0%, rgba(4,2,14,.9) 70%);
-  border: 1px solid rgba(201,168,76,.45);
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 2px;
-  box-shadow: 0 0 60px rgba(201,168,76,.12), inset 0 0 40px rgba(201,168,76,.06);
-}
-.emblem-eye   { font-size: 2.4rem; line-height: 1; animation: eye-glow 3s ease-in-out infinite alternate; }
-@keyframes eye-glow { from{filter:drop-shadow(0 0 6px rgba(201,168,76,.4))} to{filter:drop-shadow(0 0 18px rgba(201,168,76,.9))} }
-.emblem-name  { font-family:'Cinzel Decorative',serif; font-size: 1.1rem; font-weight: 700; color: #c9a84c; letter-spacing: .1em; }
-.emblem-sub   { font-family:'Cinzel',serif; font-size: .75rem; color: #9e927a; letter-spacing: .3em; text-transform: uppercase; }
-.emblem-years { font-family:'Cinzel',serif; font-size: .68rem; color: #7a6025; letter-spacing: .2em; text-transform: uppercase; margin-top: 4px; }
+  .emblem-core {
+    position: relative;
+    z-index: 2;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(74, 47, 160, 0.4) 0%,
+      rgba(4, 2, 14, 0.9) 70%
+    );
+    border: 1px solid rgba(201, 168, 76, 0.45);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    box-shadow:
+      0 0 60px rgba(201, 168, 76, 0.12),
+      inset 0 0 40px rgba(201, 168, 76, 0.06);
+  }
+  .emblem-eye {
+    font-size: 2.4rem;
+    line-height: 1;
+    animation: eye-glow 3s ease-in-out infinite alternate;
+  }
+  @keyframes eye-glow {
+    from {
+      filter: drop-shadow(0 0 6px rgba(201, 168, 76, 0.4));
+    }
+    to {
+      filter: drop-shadow(0 0 18px rgba(201, 168, 76, 0.9));
+    }
+  }
+  .emblem-name {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #c9a84c;
+    letter-spacing: 0.1em;
+  }
+  .emblem-sub {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    color: #9e927a;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+  }
+  .emblem-years {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    color: #7a6025;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
 
-.cs { position: absolute; color: #7a6025; font-size: .9rem; opacity: .6; }
-.cs-tl { top:  8px; left:  8px; }
-.cs-tr { top:  8px; right: 8px; }
-.cs-bl { bottom: 8px; left:  8px; }
-.cs-br { bottom: 8px; right: 8px; }
+  .cs {
+    position: absolute;
+    color: #7a6025;
+    font-size: 0.9rem;
+    opacity: 0.6;
+  }
+  .cs-tl {
+    top: 8px;
+    left: 8px;
+  }
+  .cs-tr {
+    top: 8px;
+    right: 8px;
+  }
+  .cs-bl {
+    bottom: 8px;
+    left: 8px;
+  }
+  .cs-br {
+    bottom: 8px;
+    right: 8px;
+  }
 
-/* Servicios lista */
-.servicios-lista {
-  background: rgba(12,8,32,.7); border: 1px solid rgba(201,168,76,.2);
-  border-radius: 12px; padding: 24px 28px; width: 100%; max-width: 340px;
-  backdrop-filter: blur(10px);
-}
-.servicios-lista h4 {
-  font-family: 'Cinzel', serif; font-size: .85rem; font-weight: 700;
-  color: #c9a84c; letter-spacing: .2em; text-transform: uppercase;
-  margin-bottom: 14px; padding-bottom: 10px;
-  border-bottom: 1px solid rgba(201,168,76,.2);
-}
-.servicios-lista ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-.servicios-lista li {
-  font-size: .95rem; color: #9e927a; padding-left: 18px; position: relative;
-  font-family: 'EB Garamond', serif; line-height: 1.5;
-}
-.servicios-lista li::before { content:'✦'; position:absolute; left:0; color:#7a6025; font-size:.65rem; top:3px; }
+  /* Servicios lista */
+  .servicios-lista {
+    background: rgba(12, 8, 32, 0.7);
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    border-radius: 12px;
+    padding: 24px 28px;
+    width: 100%;
+    max-width: 340px;
+    backdrop-filter: blur(10px);
+  }
+  .servicios-lista h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #c9a84c;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+  }
+  .servicios-lista ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .servicios-lista li {
+    font-size: 0.95rem;
+    color: #9e927a;
+    padding-left: 18px;
+    position: relative;
+    font-family: 'EB Garamond', serif;
+    line-height: 1.5;
+  }
+  .servicios-lista li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: #7a6025;
+    font-size: 0.65rem;
+    top: 3px;
+  }
 
-/* ─── TEXTO ─── */
-.maestro-text h2 {
-  font-family: 'Cinzel Decorative', serif;
-  font-size: clamp(1.7rem,3vw,2.6rem);
-  font-weight: 700; color: #ede5d0;
-  margin-bottom: 28px; line-height: 1.2;
-}
-.intro-p {
-  font-size: 1.1rem; color: #9e927a; line-height: 1.85;
-  margin-bottom: 20px;
-}
-.intro-p strong { color: #ede5d0; font-weight: 500; }
-.intro-p.emphasis {
-  font-style: italic; border-left: 2px solid #c9a84c;
-  padding-left: 18px; color: #b8a88a;
-}
+  /* ─── TEXTO ─── */
+  .maestro-text h2 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.7rem, 3vw, 2.6rem);
+    font-weight: 700;
+    color: #ede5d0;
+    margin-bottom: 28px;
+    line-height: 1.2;
+  }
+  .intro-p {
+    font-size: 1.1rem;
+    color: #9e927a;
+    line-height: 1.85;
+    margin-bottom: 20px;
+  }
+  .intro-p strong {
+    color: #ede5d0;
+    font-weight: 500;
+  }
+  .intro-p.emphasis {
+    font-style: italic;
+    border-left: 2px solid #c9a84c;
+    padding-left: 18px;
+    color: #b8a88a;
+  }
 
-.features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
-@media(max-width:500px){ .features-grid{grid-template-columns:1fr;} }
-.feat-item {
-  display: flex; align-items: flex-start; gap: 12px;
-  background: rgba(201,168,76,.05); border: 1px solid rgba(201,168,76,.15);
-  border-radius: 8px; padding: 14px 16px;
-}
-.feat-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
-.feat-item p { font-size: .95rem; color: #9e927a; line-height: 1.5; }
-.feat-item p strong { color: #ede5d0; display: block; }
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 32px;
+  }
+  @media (max-width: 500px) {
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .feat-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: rgba(201, 168, 76, 0.05);
+    border: 1px solid rgba(201, 168, 76, 0.15);
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .feat-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .feat-item p {
+    font-size: 0.95rem;
+    color: #9e927a;
+    line-height: 1.5;
+  }
+  .feat-item p strong {
+    color: #ede5d0;
+    display: block;
+  }
 </style>

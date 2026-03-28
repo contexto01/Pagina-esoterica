@@ -1,7 +1,8 @@
 ---
-import WaIcon from './WaIcon.astro';
-const { link } = Astro.props;
-const bgImg = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1600&q=90";
+import WaIcon from './WaIcon.astro'
+const { link } = Astro.props
+const bgImg =
+  'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1600&q=90'
 ---
 
 <!-- FINAL CTA -->
@@ -12,57 +13,136 @@ const bgImg = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto
     <div class="rune-line light" style="justify-content:center;margin-bottom:24px">
       <span>⸻</span><span class="rune">☽ ✦ ☾</span><span>⸻</span>
     </div>
-    <h2>Habla Ahora con Isaías Camacho</h2>
+    <h2>Habla Ahora con Benjamin santos</h2>
     <p>
-      Si estás pasando por problemas de amor, energía negativa o necesitas orientación espiritual,
-      comunícate directamente para recibir atención <strong>personalizada, confidencial e inmediata</strong>.
+      Si estás pasando por problemas de amor, energía negativa o necesitas orientación
+      espiritual, comunícate directamente para recibir atención <strong
+        >personalizada, confidencial e inmediata</strong
+      >.
     </p>
-    <a href={link} target="_blank" rel="noopener noreferrer" class="btn-wa" style="font-size:1.2rem;padding:24px 52px">
-      <WaIcon/>
+    <a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn-wa"
+      style="font-size:1.2rem;padding:24px 52px"
+    >
+      <WaIcon />
       Escribir por WhatsApp Ahora
     </a>
-    <p class="final-note">💛 Consulta inicial gratuita · 100% Confidencial · Respuesta en minutos</p>
+    <p class="final-note">
+      💛 Consulta inicial gratuita · 100% Confidencial · Respuesta en minutos
+    </p>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo">𓂀 Isaías Camacho</div>
+    <div class="footer-logo">𓂀 Benjamin santos</div>
     <p class="footer-tag">Maestro Espiritual · +35 Años de Experiencia</p>
-    <p class="footer-services">Amarres de Amor · Retorno de Pareja · Limpiezas Espirituales · Protección · Lecturas</p>
-    <p class="footer-copy">© 2025 Isaías Camacho. Todos los derechos reservados.</p>
+    <p class="footer-services">
+      Amarres de Amor · Retorno de Pareja · Limpiezas Espirituales · Protección · Lecturas
+    </p>
+    <p class="footer-copy">© 2025 Benjamin santos. Todos los derechos reservados.</p>
   </div>
 </footer>
 
 <style>
-/* FINAL CTA */
-.final-cta { position:relative; z-index:1; text-align:center; padding:130px 24px; overflow:hidden; }
-.final-img { position:absolute; inset:0; background-size:cover; background-position:center 30%; z-index:0; }
-.final-overlay {
-  position:absolute; inset:0; z-index:1;
-  background: linear-gradient(to bottom, rgba(4,2,14,.7) 0%, rgba(45,27,105,.45) 50%, rgba(4,2,14,.88) 100%);
-}
-.final-content { position:relative; z-index:2; max-width:740px; margin:0 auto; }
-.final-content h2 {
-  font-family:'Cinzel Decorative',serif;
-  font-size:clamp(1.9rem,4.5vw,3.2rem);
-  color:#ede5d0; margin-bottom:28px; line-height:1.2;
-}
-.final-content > p { font-size:1.15rem; color:#9e927a; max-width:560px; margin:0 auto 44px; line-height:1.82; }
-.final-content p strong { color:#ede5d0; font-weight:500; }
-.final-note { margin-top:22px; font-size:.9rem; color:#9e927a; font-family:'Cinzel',serif; letter-spacing:.06em; }
+  /* FINAL CTA */
+  .final-cta {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 130px 24px;
+    overflow: hidden;
+  }
+  .final-img {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center 30%;
+    z-index: 0;
+  }
+  .final-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      to bottom,
+      rgba(4, 2, 14, 0.7) 0%,
+      rgba(45, 27, 105, 0.45) 50%,
+      rgba(4, 2, 14, 0.88) 100%
+    );
+  }
+  .final-content {
+    position: relative;
+    z-index: 2;
+    max-width: 740px;
+    margin: 0 auto;
+  }
+  .final-content h2 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.9rem, 4.5vw, 3.2rem);
+    color: #ede5d0;
+    margin-bottom: 28px;
+    line-height: 1.2;
+  }
+  .final-content > p {
+    font-size: 1.15rem;
+    color: #9e927a;
+    max-width: 560px;
+    margin: 0 auto 44px;
+    line-height: 1.82;
+  }
+  .final-content p strong {
+    color: #ede5d0;
+    font-weight: 500;
+  }
+  .final-note {
+    margin-top: 22px;
+    font-size: 0.9rem;
+    color: #9e927a;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.06em;
+  }
 
-/* FOOTER */
-footer {
-  position:relative; z-index:1;
-  border-top:1px solid rgba(201,168,76,.18);
-  padding:52px 24px; text-align:center;
-  background:rgba(4,2,14,.96);
-}
-.footer-inner { max-width:700px; margin:0 auto; }
-.footer-logo { font-family:'Cinzel Decorative',serif; font-size:1.5rem; color:#c9a84c; margin-bottom:8px; }
-.footer-tag  { font-family:'Cinzel',serif; font-size:.85rem; color:#7a6025; letter-spacing:.15em; text-transform:uppercase; margin-bottom:12px; }
-.footer-services { font-size:.9rem; color:#9e927a; margin-bottom:14px; line-height:1.6; }
-.footer-copy { font-size:.75rem; opacity:.4; color:#9e927a; }
+  /* FOOTER */
+  footer {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid rgba(201, 168, 76, 0.18);
+    padding: 52px 24px;
+    text-align: center;
+    background: rgba(4, 2, 14, 0.96);
+  }
+  .footer-inner {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .footer-logo {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.5rem;
+    color: #c9a84c;
+    margin-bottom: 8px;
+  }
+  .footer-tag {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    color: #7a6025;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .footer-services {
+    font-size: 0.9rem;
+    color: #9e927a;
+    margin-bottom: 14px;
+    line-height: 1.6;
+  }
+  .footer-copy {
+    font-size: 0.75rem;
+    opacity: 0.4;
+    color: #9e927a;
+  }
 </style>
