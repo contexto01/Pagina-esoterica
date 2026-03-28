@@ -1,0 +1,41 @@
+---
+const stats = [
+  { num: "+2.000", label: "Consultas realizadas" },
+  { num: "+35",    label: "Años de experiencia" },
+  { num: "98%",    label: "Clientes satisfechos" },
+  { num: "24/7",   label: "Disponible para ti" },
+];
+---
+<div class="trust-bar">
+  <div class="trust-inner">
+    {stats.map((s, i) => (
+      <>
+        <div class="trust-item">
+          <span class="t-num">{s.num}</span>
+          <span class="t-label">{s.label}</span>
+        </div>
+        {i < stats.length - 1 && <span class="t-sep">✦</span>}
+      </>
+    ))}
+  </div>
+</div>
+
+<style>
+.trust-bar {
+  position: relative; z-index: 1;
+  background: linear-gradient(135deg, rgba(74,47,160,.28) 0%, rgba(139,0,0,.18) 100%);
+  border-top: 1px solid rgba(201,168,76,.22);
+  border-bottom: 1px solid rgba(201,168,76,.22);
+  padding: 32px 24px;
+}
+.trust-inner {
+  max-width: 1000px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: center;
+  gap: 32px; flex-wrap: wrap;
+}
+.trust-item { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.t-num  { font-family:'Cinzel Decorative',serif; font-size: 2rem; color: #c9a84c; line-height: 1; }
+.t-label{ font-size: .78rem; letter-spacing: .2em; text-transform: uppercase; color: #9e927a; font-family:'Cinzel',serif; }
+.t-sep  { color: #7a6025; font-size: .7rem; }
+@media(max-width:500px){ .t-sep{display:none} }
+</style>

@@ -1,0 +1,8 @@
+---
+import WaIcon from './WaIcon.astro';
+const { link } = Astro.props;
+---
+<a href={link} target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Contactar por WhatsApp">
+  <WaIcon/>
+  <span>WhatsApp</span>
+</a>

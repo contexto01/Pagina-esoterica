@@ -1,0 +1,113 @@
+---
+import WaIcon from './WaIcon.astro'
+const { link } = Astro.props
+
+const casos = [
+  {
+    img: '/velas1.jpeg',
+    alt: 'Mujer con corazón roto y velas de amor',
+    title: 'Decepciones amorosas',
+    desc: 'Si te fallaron, si te dejaron con dudas o si sientes que te apagaron el corazón, revisamos tu caso y orientamos el mejor camino.'
+  },
+  {
+    img: '/velas2.jpeg',
+    alt: 'Velas azules alejamiento pareja frialdad',
+    title: 'Alejamiento o frialdad',
+    desc: 'Cuando hay silencio, discusiones, distancia o un cambio extraño en la actitud, se puede trabajar energía y unión con un proceso serio.'
+  },
+  {
+    img: '/velas3.jpeg',
+    alt: 'Rosas marchitas falta de atracción y deseo',
+    title: 'Falta de atracción y deseo',
+    desc: 'Si se apagó la pasión o la conexión, se orienta un trabajo por etapas para recuperar armonía, comunicación y cercanía.'
+  }
+]
+---
+
+<section class="casos-sec" id="casos">
+  <div class="sec-inner">
+    <div class="sec-header">
+      <div class="rune-line"><span>⸻</span><span class="rune">☽ ✦ ☾</span><span>⸻</span></div>
+      <h2>Si alguno de estos es tu caso, contáctanos ahora</h2>
+      <p>
+        Cuando el corazón se enfría o aparece la distancia, lo peor es quedarse en silencio.<br
+        />Escríbeme y cuéntame tu situación.
+      </p>
+    </div>
+
+    <div class="casos-grid">
+      {
+        casos.map((c, i) => (
+          <div class="caso-card card reveal" style={`animation-delay:${i * 0.12}s`}>
+            <div class="caso-img">
+              <img src={c.img} alt={c.alt} loading="lazy" />
+              <div class="caso-fade" />
+            </div>
+            <div class="caso-body">
+              <h3>{c.title}</h3>
+              <p>{c.desc}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="sec-cta">
+      <a href={link} target="_blank" rel="noopener noreferrer" class="btn-wa">
+        <WaIcon />
+        Consultar por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .casos-sec {
+    position: relative;
+    z-index: 1;
+    padding: 100px 24px;
+  }
+  .sec-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .sec-cta {
+    text-align: center;
+    margin-top: 52px;
+  }
+
+  .casos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+  }
+
+  .caso-card {
+    cursor: default;
+  }
+  .caso-img {
+    position: relative;
+    height: 320px;
+    overflow: hidden;
+  }
+  .caso-fade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 40%, rgba(4, 2, 14, 0.96) 100%);
+  }
+  .caso-body {
+    padding: 28px 28px 36px;
+  }
+  .caso-body h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #c9a84c;
+    margin-bottom: 12px;
+  }
+  .caso-body p {
+    font-size: 1.05rem;
+    color: #9e927a;
+    line-height: 1.65;
+  }
+</style>
