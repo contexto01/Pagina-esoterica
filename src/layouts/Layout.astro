@@ -1,0 +1,151 @@
+---
+import '../styles/global.css'
+const { title, description } = Astro.props
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="amarres de amor, Benjamin Santos, maestro espiritual, lectura de tarot, rituales espirituales, limpieza espiritual, recuperar el amor, retorno de pareja"
+    />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <canvas id="cosmos"></canvas>
+    <div class="cursor-orb"></div>
+    <div class="cursor-trail"></div>
+    <slot />
+
+    <script>
+      // ── COSMOS CANVAS ──────────────────────────────────────────
+      const canvas = document.getElementById('cosmos') as HTMLCanvasElement
+      const ctx = canvas.getContext('2d')!
+      let W = (canvas.width = innerWidth),
+        H = (canvas.height = innerHeight)
+
+      const stars = Array.from({ length: 240 }, () => ({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: Math.random() * 1.8 + 0.3,
+        a: Math.random(),
+        da: (Math.random() - 0.5) * 0.007
+      }))
+      const pts: {
+        x: number
+        y: number
+        vx: number
+        vy: number
+        l: number
+        ml: number
+        r: number
+      }[] = []
+      let mx = W / 2,
+        my = H / 2,
+        frame = 0
+
+      function tick() {
+        ctx.clearRect(0, 0, W, H)
+        frame++
+        const g = ctx.createRadialGradient(
+          W * 0.35 + Math.sin(frame * 0.002) * 50,
+          H * 0.4,
+          0,
+          W * 0.35,
+          H * 0.4,
+          W * 0.55
+        )
+        g.addColorStop(0, 'rgba(74,47,160,.03)')
+        g.addColorStop(1, 'transparent')
+        ctx.fillStyle = g
+        ctx.fillRect(0, 0, W, H)
+
+        stars.forEach((s) => {
+          s.a += s.da
+          if (s.a <= 0 || s.a >= 1) s.da *= -1
+          ctx.beginPath()
+          ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2)
+          ctx.fillStyle = `rgba(255,255,220,${s.a * 0.75})`
+          ctx.fill()
+          const d = Math.hypot(s.x - mx, s.y - my)
+          if (d < 170) {
+            ctx.beginPath()
+            ctx.moveTo(s.x, s.y)
+            ctx.lineTo(mx, my)
+            ctx.strokeStyle = `rgba(201,168,76,${(1 - d / 170) * 0.06})`
+            ctx.lineWidth = 0.5
+            ctx.stroke()
+          }
+        })
+
+        for (let i = pts.length - 1; i >= 0; i--) {
+          const p = pts[i]
+          p.l++
+          p.x += p.vx
+          p.y += p.vy
+          p.vy -= 0.02
+          const pr = p.l / p.ml
+          ctx.beginPath()
+          ctx.arc(p.x, p.y, p.r * (1 - pr), 0, Math.PI * 2)
+          ctx.fillStyle = `rgba(201,168,76,${0.55 * (1 - pr)})`
+          ctx.fill()
+          if (p.l >= p.ml) pts.splice(i, 1)
+        }
+        requestAnimationFrame(tick)
+      }
+      tick()
+      window.addEventListener('resize', () => {
+        W = canvas.width = innerWidth
+        H = canvas.height = innerHeight
+      })
+
+      // ── CURSOR ──────────────────────────────────────────────────
+      const orb = document.querySelector('.cursor-orb') as HTMLElement
+      const trail = document.querySelector('.cursor-trail') as HTMLElement
+      document.addEventListener('mousemove', (e) => {
+        mx = e.clientX
+        my = e.clientY
+        if (orb) {
+          orb.style.left = e.clientX + 'px'
+          orb.style.top = e.clientY + 'px'
+        }
+        if (trail) {
+          trail.style.left = e.clientX + 'px'
+          trail.style.top = e.clientY + 'px'
+        }
+        if (Math.random() > 0.68)
+          for (let i = 0; i < 3; i++)
+            pts.push({
+              x: e.clientX,
+              y: e.clientY,
+              vx: (Math.random() - 0.5) * 1.1,
+              vy: -Math.random() * 1.4 - 0.4,
+              l: 0,
+              ml: 55 + Math.random() * 35,
+              r: Math.random() * 2 + 0.8
+            })
+      })
+
+      // ── SCROLL REVEAL ────────────────────────────────────────────
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              ;(e.target as HTMLElement).classList.add('visible')
+              io.unobserve(e.target)
+            }
+          })
+        },
+        { threshold: 0.1 }
+      )
+      document.querySelectorAll('.reveal').forEach((el) => io.observe(el))
+    </script>
+  </body>
+</html>

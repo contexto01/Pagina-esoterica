@@ -1,0 +1,208 @@
+---
+const testimonios = [
+  {
+    initial: 'M',
+    name: 'María C.',
+    city: 'New York',
+    stars: 5,
+    text: 'Gracias a la orientación de Benjamin santos pude recuperar la tranquilidad en mi relación. Lo que parecía imposible, ahora es una hermosa realidad. Infinitamente agradecida.'
+  },
+  {
+    initial: 'A',
+    name: 'Alejandro R.',
+    city: 'Chicago',
+    stars: 5,
+    text: 'La lectura espiritual fue increíblemente acertada. Me ayudó a tomar la decisión más importante de mi vida con claridad y confianza. El maestro es genuinamente extraordinario.',
+    feat: true
+  },
+  {
+    initial: 'L',
+    name: 'Lucía V.',
+    city: 'Texas',
+    stars: 5,
+    text: 'Sentí un gran cambio en mi energía después del ritual. Es como si se hubiera levantado un peso enorme de mi vida. Recomiendo totalmente a Benjamin santos.'
+  }
+]
+
+const faqs = [
+  {
+    q: '¿La consulta es confidencial?',
+    a: 'Sí. Tu situación se maneja con total discreción. Con tu nombre y un resumen breve es suficiente para iniciar la orientación.'
+  },
+  {
+    q: '¿Cómo sé qué servicio necesito?',
+    a: 'En consulta se evalúa tu caso (frialdad, distancia, terceros, bloqueo, desgaste) y se define el enfoque más adecuado para ti.'
+  },
+  {
+    q: '¿Cuánto tarda un proceso?',
+    a: 'Depende del caso. Se trabaja por etapas y se revisa el avance según tu situación real. No hay tiempos genéricos ni soluciones instantáneas.'
+  },
+  {
+    q: '¿Atiendes por videollamada?',
+    a: 'Sí. Se coordina por WhatsApp la forma de atención más conveniente: mensaje, llamada o videollamada.'
+  }
+]
+---
+
+<!-- TESTIMONIOS -->
+<section class="testi-sec" id="testimonios">
+  <div class="sec-inner" style="max-width:1200px;margin:0 auto;padding:100px 24px">
+    <div class="sec-header">
+      <div class="rune-line"><span>⸻</span><span class="rune">☽ ✦ ☾</span><span>⸻</span></div>
+      <h2>Voces que Transformaron su Destino</h2>
+      <p>Miles de personas han encontrado el camino de vuelta a su felicidad</p>
+    </div>
+
+    <div class="testi-grid">
+      {
+        testimonios.map((t, i) => (
+          <div
+            class={`card testi-card reveal${t.feat ? ' testi-feat' : ''}`}
+            style={`animation-delay:${i * 0.12}s`}
+          >
+            <div class="t-stars">{'★'.repeat(t.stars)}</div>
+            <blockquote>"{t.text}"</blockquote>
+            <div class="t-author">
+              <div class="t-av">{t.initial}</div>
+              <div>
+                <strong>{t.name}</strong>
+                <span>{t.city}, Estados Unidos</span>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec" id="faq">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px 100px">
+    <div class="sec-header">
+      <div class="rune-line"><span>⸻</span><span class="rune">☽ ✦ ☾</span><span>⸻</span></div>
+      <h2>Preguntas Frecuentes</h2>
+      <p>Respuestas directas antes de escribir por WhatsApp</p>
+    </div>
+    <div class="faq-grid">
+      {
+        faqs.map((f, i) => (
+          <div class="card faq-item reveal" style={`animation-delay:${i * 0.1}s`}>
+            <h3>{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  /* TESTI */
+  .testi-sec {
+    position: relative;
+    z-index: 1;
+  }
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 28px;
+  }
+  .testi-card {
+    padding: 38px 34px;
+    position: relative;
+    cursor: default;
+  }
+  .testi-feat {
+    border-color: rgba(201, 168, 76, 0.42) !important;
+    background: linear-gradient(
+      135deg,
+      rgba(74, 47, 160, 0.22),
+      rgba(12, 8, 32, 0.95)
+    ) !important;
+  }
+  .testi-card::before {
+    content: '"';
+    position: absolute;
+    top: 10px;
+    left: 22px;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 5.5rem;
+    color: #c9a84c;
+    opacity: 0.08;
+    line-height: 1;
+  }
+  .t-stars {
+    color: #c9a84c;
+    font-size: 1.1rem;
+    letter-spacing: 0.14em;
+    margin-bottom: 16px;
+  }
+  blockquote {
+    font-size: 1.1rem;
+    color: #ede5d0;
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 26px;
+  }
+  .t-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .t-av {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4a2fa0, #7a6025);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.05rem;
+    color: #ede5d0;
+    flex-shrink: 0;
+  }
+  .t-author strong {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    color: #c9a84c;
+  }
+  .t-author span {
+    font-size: 0.8rem;
+    color: #9e927a;
+  }
+
+  /* FAQ */
+  .faq-sec {
+    position: relative;
+    z-index: 1;
+  }
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    gap: 20px;
+  }
+  .faq-item {
+    padding: 34px 36px;
+    cursor: default;
+  }
+  .faq-item h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.15rem;
+    color: #ede5d0;
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+  .faq-item p {
+    font-size: 1rem;
+    color: #9e927a;
+    line-height: 1.72;
+  }
+  @media (max-width: 520px) {
+    .faq-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
